@@ -10,7 +10,6 @@ class IndexView(generic.ListView):
 
     def get_queryset(self):
         '''Return all news stories.'''
-        # return NewsStory.objects.all()
         return NewsStory.objects.order_by('-pub_date')
 
     def get_context_data(self, **kwargs):
@@ -28,3 +27,7 @@ class AddStoryView(generic.CreateView):
     context_object_name = 'storyform'
     template_name = 'news/createStory.html'
     success_url = reverse_lazy('news:index')
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
