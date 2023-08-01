@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.urls import include, path
+from django.conf import settings
 
 urlpatterns = [
     path('news/', include('news.urls')),
@@ -23,5 +24,3 @@ urlpatterns = [
     path('users/', include('users.urls')),
     path('users/', include('django.contrib.auth.urls')),
 ]
-
-

@@ -14,3 +14,18 @@
     </div>
 </div>
 {% endblock %}
+
+{% block content %}
+<div id="story-wrapper">
+    <h2>{{ story.title }}</h2>
+    <h4>{{ story.author }}</h4>
+    <div id="story-content">
+        {% if story.image is not None %}
+        <img src =" {{ story.image }} ">
+        {% else %}
+        <img src="https://picsum.photos/id/1/600">
+        {% endif %}
+        {{ story.content|linebreaks }}
+    </div>
+</div>
+{% endblock %}

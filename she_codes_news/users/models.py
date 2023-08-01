@@ -1,9 +1,9 @@
-from django.db import models
+# users/models.py
 
 from django.contrib.auth.models import AbstractUser
 
 class CustomUser(AbstractUser):
     pass
 
-def __str__(self):
-    return self.username
+    def __str__(self):
+        return self.username
