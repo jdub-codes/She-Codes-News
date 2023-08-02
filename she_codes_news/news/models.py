@@ -7,6 +7,6 @@ class NewsStory(models.Model):
         get_user_model(),
         on_delete=models.CASCADE
     )
-    image = models.URLField(max_length=200, null=True)
+    image = models.URLField(max_length=2000, null=True)
     pub_date = models.DateTimeField()
     content = models.TextField()

@@ -23,7 +23,7 @@
         {% if story.image is not None %}
         <img src =" {{ story.image }} ">
         {% else %}
-        <img src="https://picsum.photos/id/1/600">
+        <img src="{% static '/news/images/placeholder-5.jpg' %}">
         {% endif %}
         {{ story.content|linebreaks }}
     </div>
